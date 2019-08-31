@@ -13,7 +13,7 @@ function respond() {
       botRegexSTD = /^\/standings/;botRegexRK = /^\/rank/;botRegexCMD = /^\/command/; botRegexFA = /^\/free agents/;botRegexMRK = /^\/rookies/;
       botRegexTD = /^\/trade/; botRegexSG = /^\/sign/; botRegexRLP = /^\/release/;botRegexSLR = /^\/salary/;
       botRegexRLS = /^\/rules/; botRegexBRK = /^\/breakdown/; botRegexSwerve = /^\/swerve/; botRegexJC = /^\/geezus/;
-      botRegexDN = /^\/Deez Nuts/; botRegexADMIN = /^\/admin/;
+      botRegexDN = /^\/Deez Nuts/; botRegexADMIN = /^\/admin/; botRegexYt = /^\/youtube/i;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -239,6 +239,11 @@ function respond() {
   
   
   }
+  else if(request.text && botRegexTw.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.youtube.com/"+request.text.substring(8,request.text.length));
+    this.res.end();
+  } 
   else {
     console.log("don't care");
     this.res.writeHead(200);
