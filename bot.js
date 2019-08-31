@@ -239,7 +239,7 @@ function respond() {
   
   
   }
-  else if(request.text && botRegexTw.test(request.text)) {
+  else if(request.text && botRegexYt.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.youtube.com/"+request.text.substring(8,request.text.length));
     this.res.end();
