@@ -241,7 +241,7 @@ function respond() {
   }
   else if(request.text && botRegexYt.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.youtube.com/"+request.text.substring(10,request.text.length));
+    postMessage("http://www.youtube.com/"+request.text.substring(9,request.text.length));
     this.res.end();
   } 
   else {
