@@ -13,7 +13,7 @@ function respond() {
       botRegexSTD = /^\/standings/;botRegexRK = /^\/rank/;botRegexCMD = /^\/command/; botRegexFA = /^\/free agents/;botRegexMRK = /^\/rookies/;
       botRegexTD = /^\/trade/; botRegexSG = /^\/sign/; botRegexRLP = /^\/release/;botRegexSLR = /^\/salary/;
       botRegexRLS = /^\/rules/; botRegexBRK = /^\/breakdown/; botRegexSwerve = /^\/swerve/; botRegexJC = /^\/geezus/;
-      botRegexDN = /^\/Deez Nuts/; botRegexADMIN = /^\/admin/; botRegexYt = /^\/youtube/i; botRegexFYt = /^\/yt/i;
+      botRegexDN = /^\/Deez Nuts/; botRegexADMIN = /^\/admin/; botRegexYt = /^\/youtube/i; botRegexFYt = /^\/yt/i; botRegexADMIN = /^\/lines/;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -249,6 +249,11 @@ function respond() {
     postMessage("https://www.youtube.com/results?search_query="+request.text.substring(4,request.text.length));
     this.res.end();
   } 
+  else if(request.text && botRegexLINES.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://daddyleagues.com/fm/sportbook");
+    this.res.end();
+  }  
   
   else {
     console.log("don't care");
