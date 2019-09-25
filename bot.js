@@ -92,7 +92,7 @@ function respond() {
     
   else if(request.text && botRegexTD.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/FM/frontoffice/trade");
+    postMessage("http://daddyleagues.com/fm/tradecalculator");
     this.res.end();
   } 
     
